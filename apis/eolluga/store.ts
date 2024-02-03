@@ -1,4 +1,4 @@
-import eolluga from "@modules/apis/network";
+import eolluga from "../network";
 
 export interface StoreResponse {
   storeId: string;
