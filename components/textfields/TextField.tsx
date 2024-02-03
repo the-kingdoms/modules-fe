@@ -1,6 +1,6 @@
-import FlexBox from "@modules/layout/FlexBox";
-import Icon from "@modules/layout/Icon";
 import { useState } from "react";
+import FlexBox from "../../layout/FlexBox";
+import Icon from "../../layout/Icon";
 
 interface TextFieldProps {
   value?: string;

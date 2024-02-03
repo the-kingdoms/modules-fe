@@ -1,5 +1,5 @@
-import FlexBox from "@modules/layout/FlexBox";
 import { useState } from "react";
+import FlexBox from "../../layout/FlexBox";
 
 type Options = "left" | "center" | "right";
 const options: Options[] = ["left", "center", "right"];

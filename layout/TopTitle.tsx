@@ -1,6 +1,6 @@
-import FlexBox from "@modules/layout/FlexBox";
-import Icon from "@modules/layout/Icon";
 import { useRouter } from "next/router";
+import FlexBox from "./FlexBox";
+import Icon from "./Icon";
 
 interface Props {
   type?: "back" | "cancel";

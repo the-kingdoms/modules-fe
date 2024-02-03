@@ -1,7 +1,7 @@
-import Divider from "@modules/layout/Divider";
-import FlexBox from "@modules/layout/FlexBox";
-import Icon from "@modules/layout/Icon";
 import { useState } from "react";
+import Divider from "../../layout/Divider";
+import FlexBox from "../../layout/FlexBox";
+import Icon from "../../layout/Icon";
 
 export default function AddOption() {
   const [optionCount, setOptionCount] = useState<number>(2);

@@ -1,4 +1,4 @@
-import FlexBox from "@modules/layout/FlexBox";
+import FlexBox from "../../layout/FlexBox";
 
 const buttonStyle = {
   workday: "border-Black bg-Black text-White",

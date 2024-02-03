@@ -1,6 +1,5 @@
-import React from "react";
 import { atom, useAtom } from "jotai";
-import FlexBox from "@modules/layout/FlexBox";
+import FlexBox from "../layout/FlexBox";
 
 const dialogAtom = atom<JSX.Element | null>(null);
 

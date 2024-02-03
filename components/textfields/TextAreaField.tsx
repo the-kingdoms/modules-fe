@@ -1,5 +1,5 @@
-import FlexBox from "@modules/layout/FlexBox";
 import { useRef, useState } from "react";
+import FlexBox from "../../layout/FlexBox";
 
 interface TextFieldProps {
   value?: string;
@@ -7,7 +7,7 @@ interface TextFieldProps {
   className?: string;
 }
 
-/**
+/*
  * TextAreaField 컴포넌트는 얼루가의 텍스트 에리아 필드를 구현한 컴포넌트입니다.
  * useState를 통해 value와 setValue를 받아서 사용합니다.
  * 초기 가운데 정렬을 위해 height를 자동으로 조절합니다. (최대 56px, 줄어들지는 않습니다)

@@ -1,5 +1,5 @@
-import useDialog from "@modules/hooks/useDialog";
-import FlexBox from "@modules/layout/FlexBox";
+import useDialog from "../../hooks/useDialog";
+import FlexBox from "../../layout/FlexBox";
 
 interface ButtonBarProps {
   button: React.ReactNode;

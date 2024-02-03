@@ -1,5 +1,5 @@
-import FlexBox from "@modules/layout/FlexBox";
-import Icon from "@modules/layout/Icon";
+import FlexBox from "../../layout/FlexBox";
+import Icon from "../../layout/Icon";
 
 interface LoginButtonProps {
   type: "google" | "naver";

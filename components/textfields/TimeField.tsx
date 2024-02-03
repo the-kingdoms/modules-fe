@@ -1,5 +1,5 @@
-import FlexBox from "@modules/layout/FlexBox";
 import React, { useRef, useState } from "react";
+import FlexBox from "../../layout/FlexBox";
 
 interface TextFieldProps {
   value: string;
