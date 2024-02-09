@@ -25,7 +25,7 @@ export default function Calender({ day: paramDay, onClick }: CalenderProps) {
     currentDay = dayjs().format("ddd") as DayType;
   }
   return (
-    <FlexBox className="w-full justify-between px-4 py-2">
+    <FlexBox className="w-full justify-between">
       {dayList.map((day, index) => (
         <button
           key={index}
