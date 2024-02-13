@@ -1,12 +1,12 @@
-import { useState } from "react";
+import { useRouter } from "next/router";
 import FlexBox from "../../layout/FlexBox";
 import Icon from "../../layout/Icon";
 
-type TabStatus = "main" | "manage" | "my";
+type TabStatus = "main" | "manage" | "mypage";
 const text = {
   main: "홈",
   manage: "직원관리",
-  my: "마이",
+  mypage: "마이",
 };
 
 interface StatusProps {
@@ -22,7 +22,7 @@ function TabIcon({ type, selected }: { type: TabStatus; selected: boolean }) {
         return <Icon src="/icon/bars/gage/main_black.png" sz={32} />;
       case "manage":
         return <Icon src="/icon/bars/gage/manage_black.png" sz={32} />;
-      case "my":
+      case "mypage":
         return <Icon src="/icon/bars/gage/my_black.png" sz={32} />;
       default:
         return null;
@@ -33,7 +33,7 @@ function TabIcon({ type, selected }: { type: TabStatus; selected: boolean }) {
         return <Icon src="/icon/bars/gage/main_gray.png" sz={32} />;
       case "manage":
         return <Icon src="/icon/bars/gage/manage_gray.png" sz={32} />;
-      case "my":
+      case "mypage":
         return <Icon src="/icon/bars/gage/my_gray.png" sz={32} />;
       default:
         return null;
@@ -54,21 +54,22 @@ function Status({ type, selected, onClick }: StatusProps) {
 }
 
 export default function TabBarGage() {
-  const [selectedTab, setSelectedTab] = useState<TabStatus>("main");
+  const router = useRouter();
+  const path = router.pathname.split("/")[1];
 
   const selectHandle = (type: TabStatus) => {
-    setSelectedTab(type);
+    router.push(`/${type}`);
   };
 
   return (
     <div className="w-full sticky bottom-0 pb-8 pt-5 bg-white border-t">
       <FlexBox className="justify-between">
-        {["main", "manage", "my"].map((type, index) => {
+        {["main", "manage", "mypage"].map((type, index) => {
           return (
             <Status
               key={index}
               type={type as TabStatus}
-              selected={selectedTab === type}
+              selected={type === path}
               onClick={() => selectHandle(type as TabStatus)}
             />
           );
