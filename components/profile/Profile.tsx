@@ -3,6 +3,7 @@ import FlexBox from "../../layout/FlexBox";
 interface ProfileProps {
   name: string;
   size: "S" | "M" | "L";
+  focus?: boolean;
 }
 
 const style = {
@@ -15,10 +16,14 @@ const textStyle = {
   M: "H4-bold",
   L: "H1",
 };
-export default function Profile({ name, size }: ProfileProps) {
+const colorStyle = {
+  focus: "from-[#AEAEAE] to-[#7C7C7C]",
+  blur: "from-[#D8D8D8] to-[#BEBEBE]",
+};
+export default function Profile({ name, size, focus = true }: ProfileProps) {
   return (
     <FlexBox
-      className={`bg-gradient-to-b from-[#AEAEAE] to-[#7C7C7C] rounded-full ${style[size]} justify-center`}
+      className={`bg-gradient-to-b rounded-full ${focus ? colorStyle.focus : colorStyle.blur} ${style[size]} justify-center`}
     >
       <span className={`text-white ${textStyle[size]}`}>{name[0]}</span>
     </FlexBox>
