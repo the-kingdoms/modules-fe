@@ -49,7 +49,7 @@ export default function ScheduleList({
           onClick={onDelete}
         >
           <span className="hidden">delete</span>
-          <Icon src="/icon/control/delete.svg" sz={24} />
+          <Icon src="/icon/control/delete.svg" sz={18} />
         </button>
       )}
     </FlexBox>
