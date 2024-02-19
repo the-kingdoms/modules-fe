@@ -1,32 +1,46 @@
-import { useState } from "react";
-
 interface TextButtonProps {
   size: "L" | "M" | "S" | "full";
   className?: string;
   text: string;
+  secondaryText?: string;
+  type?: "outline" | "filled";
+  isClicked?: boolean;
   inactive?: boolean;
   onClick?: () => void;
 }
 
-const style = {
+const sizeStyle = {
   full: "w-full",
   L: "w-[328px]",
   M: "w-[164px]",
   S: "w-[120px]",
 };
 
+const buttonStyle = {
+  filled: {
+    active: "bg-black text-white",
+    inactive: "bg-Gray3 text-Gray4",
+    clicked: "bg-black text-Gray4",
+  },
+  outline: {
+    active: "bg-white border-2 border-Black text-Black",
+    inactive: "bg-white border-2 border-Gray2 text-Gray4",
+    clicked: "bg-Gray2 border-2 border-Gray5 text-Gray5",
+  },
+};
+
 export default function TextButton({
   size,
   className,
   text,
+  secondaryText,
+  type = "filled",
+  isClicked,
   inactive,
   onClick,
 }: TextButtonProps) {
-  const [clicked, setClicked] = useState(false);
-
   const clickHandle = () => {
     if (inactive) return;
-    setClicked(true);
     onClick && onClick();
   };
 
@@ -34,16 +48,19 @@ export default function TextButton({
     <button
       type="button"
       className={`flex justify-center items-center rounded-lg h-[48px] ${
-        style[size]
-      } ${className} ${inactive ? "bg-Gray2" : "bg-Black"}`}
+        sizeStyle[size]
+      } ${buttonStyle[type][inactive ? "inactive" : isClicked ? "clicked" : "active"]}
+      ${className}`}
       onClick={clickHandle}
     >
-      <div
-        className={`B4-medium ${
-          clicked ? "text-Gray4" : inactive ? "text-Gray3" : "text-white"
-        }`}
-      >
+      <div className="B4-medium">
         {text}
+        {secondaryText && (
+          <>
+            <span className="mx-2">|</span>
+            {secondaryText}
+          </>
+        )}
       </div>
     </button>
   );
