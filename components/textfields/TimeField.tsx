@@ -30,7 +30,6 @@ export default function TimeField({
 
   const handleFocus = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    setFocus(true);
     inputRefList[0].current?.focus();
   };
 
@@ -61,12 +60,8 @@ export default function TimeField({
   return (
     <FlexBox
       className={`justify-center w-[148px] h-[40px] border border-1 rounded ${
-        props.disabled
-          ? "border-Gray2"
-          : focus
-            ? "border-black"
-            : "border-Gray4"
-      } ${props.disabled ? "text-Gray2" : focus ? "text-Black" : "text-Gray4"}`}
+        props.disabled ? "bg-Gray1" : focus ? "bg-black" : "bg-Gray6"
+      } ${props.disabled ? "text-Gray3" : focus ? "text-white" : "text-Gray3"}`}
     >
       <button
         type="button"
@@ -77,27 +72,35 @@ export default function TimeField({
           <input
             ref={ref0}
             value={value[0]}
-            className="outline-none w-[12px] text-center selection:underline"
+            className="outline-none w-[12px] text-center selection:underline bg-transparent"
             onKeyDown={e => handleChange(e, 0)}
+            onFocus={() => setFocus(true)}
+            onBlur={() => setFocus(false)}
           />
           <input
             ref={ref1}
             value={value[1]}
-            className="outline-none w-[12px] text-center selection:underline"
+            className="outline-none w-[12px] text-center selection:underline bg-transparent"
             onKeyDown={e => handleChange(e, 1)}
+            onFocus={() => setFocus(true)}
+            onBlur={() => setFocus(false)}
           />
           <span className="mx-1">:</span>
           <input
             ref={ref2}
             value={value[2]}
-            className="outline-none w-[12px] text-center selection:underline"
+            className="outline-none w-[12px] text-center selection:underline bg-transparent"
             onKeyDown={e => handleChange(e, 2)}
+            onFocus={() => setFocus(true)}
+            onBlur={() => setFocus(false)}
           />
           <input
             ref={ref3}
             value={value[3]}
-            className="outline-none w-[12px] text-center selection:underline"
+            className="outline-none w-[12px] text-center selection:underline bg-transparent"
             onKeyDown={e => handleChange(e, 3)}
+            onFocus={() => setFocus(true)}
+            onBlur={() => setFocus(false)}
           />
         </FlexBox>
       </button>
