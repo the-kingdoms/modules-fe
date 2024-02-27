@@ -33,7 +33,8 @@ export default function ScheduleList({
     <FlexBox direction="row" className="w-full h-14 relative">
       <button
         type="button"
-        className={`absolute right-0 w-[280px] h-full rounded-xl ${style[position]} ${selectList ? styles.appear : styles.disappear}`}
+        className={`absolute right-0 w-[280px] h-full rounded-xl ${style[position]}
+        ${selectList === null ? "" : selectList ? styles.appear : styles.disappear}`}
         onClick={clickList}
       >
         <FlexBox direction="col" className="items-start gap-1 px-3 py-2.5">
