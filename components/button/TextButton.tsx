@@ -12,7 +12,7 @@ interface TextButtonProps {
 const sizeStyle = {
   full: "w-full",
   L: "w-[328px]",
-  M: "w-[164px]",
+  M: "w-[160px]",
   S: "w-[120px]",
 };
 
