@@ -1,0 +1,33 @@
+@keyframes appear {
+  from {
+    right: 0;
+    border-top-right-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+  }
+  to {
+    right: 3rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+@keyframes disappear {
+  from {
+    right: 3rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  to {
+    right: 0;
+    border-top-right-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+  }
+}
+
+.appear {
+  animation: appear 0.5s forwards;
+}
+
+.disappear {
+  animation: disappear 0.5s forwards;
+}
