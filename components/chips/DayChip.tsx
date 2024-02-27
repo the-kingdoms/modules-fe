@@ -4,8 +4,8 @@ const buttonStyle = {
   workday: "border-Black bg-Black text-White",
   dayoff: "border-Red bg-Gray1 text-Red",
   inputing: "border-Black bg-Gray1 text-Black",
-  inputed: "border-Gray5 bg-Gray5 text-Gray3",
-  inactive: "border-Gray2 bg-Gray1 text-Gray4",
+  inputed: "border-Gray6 bg-Gray6 text-Gray3",
+  inactive: "border-Gray1 bg-Gray1 text-Gray4",
 };
 
 interface DayChipProps {
@@ -26,9 +26,9 @@ export default function DayChip({ day, type, onChipClick }: DayChipProps) {
   return (
     <button type="button" onClick={onChipClick}>
       <FlexBox
-        className={`B5-regular justify-center w-[33px] h-[33px] rounded-full border border-1 ${buttonStyle[type]}`}
+        className={`justify-center w-[40px] h-[44px] rounded-xl border border-1 ${buttonStyle[type]}`}
       >
-        {day}
+        <span className="B3-regular">{day}</span>
       </FlexBox>
     </button>
   );
