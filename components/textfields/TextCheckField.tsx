@@ -57,7 +57,7 @@ export default function TextCheckField({
   };
 
   return (
-    <FlexBox className="w-full justify-between p-3 bg-Gray1 rounded-lg">
+    <FlexBox className="w-full justify-between py-3 px-4 bg-Gray1 rounded-lg">
       <button
         type="button"
         onClick={handleFocus}
@@ -67,7 +67,7 @@ export default function TextCheckField({
           <textarea
             {...props}
             ref={ref}
-            className={`${focus ? "visible" : "invisible"} 
+            className={`${focus ? "visible" : "invisible"} !leading-[22px]
             B3-medium text-black w-full break-words bg-transparent outline-none overflow-hidden`}
             value={value}
             onChange={handleChange}
@@ -77,22 +77,23 @@ export default function TextCheckField({
             }}
             onBlur={handleBlur}
             style={{ height }}
+            placeholder=""
           />
         ) : (
           <FlexBox direction="col" className="w-full gap-2 items-start">
-            {value?.split("\n")?.map((line, index) => {
+            {(value || props.placeholder)?.split("\n")?.map((line, index) => {
               if (index === 0)
                 return (
                   <div
-                    className={`B3-medium ${inactive ? "text-Gray5" : "text-black"}`}
+                    className={`B3-medium ${inactive || !value ? "text-Gray5" : "text-black"}`}
                   >
-                    {value?.split("\n")[0]}
+                    {(value || props.placeholder)?.split("\n")[0]}
                   </div>
                 );
               return (
                 <div
                   key={index}
-                  className={`B4-regular ${inactive ? "text-Gray4" : "text-Gray5"}`}
+                  className={`B4-regular ${inactive || !value ? "text-Gray4" : "text-Gray5"}`}
                 >
                   {line}
                 </div>
