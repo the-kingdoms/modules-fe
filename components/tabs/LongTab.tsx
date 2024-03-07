@@ -6,6 +6,7 @@ const options: Options[] = ["left", "right"];
 interface LongTabProps {
   text: [string, string];
   className?: string;
+  initPage?: Options;
   pageHandle?: (page: Options) => void;
 }
 
@@ -43,8 +44,13 @@ function Tab({ text, currentPage, position, onClick }: TabProps) {
   );
 }
 
-export default function LongTab({ text, className, pageHandle }: LongTabProps) {
-  const [page, setPage] = useState<Options>("left");
+export default function LongTab({
+  text,
+  className,
+  initPage = "left",
+  pageHandle,
+}: LongTabProps) {
+  const [page, setPage] = useState<Options>(initPage);
 
   const onClick = (_page: Options) => {
     setPage(_page);
