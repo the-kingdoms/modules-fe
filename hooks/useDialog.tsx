@@ -2,6 +2,7 @@ import { atom, useAtom } from "jotai";
 import FlexBox from "../layout/FlexBox";
 
 const dialogAtom = atom<JSX.Element | null>(null);
+dialogAtom.debugLabel = "dialogAtom";
 
 interface DialogProps {
   title: string;
