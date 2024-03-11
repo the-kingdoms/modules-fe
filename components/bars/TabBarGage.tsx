@@ -62,7 +62,7 @@ export default function TabBarGage() {
   };
 
   return (
-    <div className="w-full sticky bottom-0 pb-8 pt-5 bg-white border-t">
+    <div className="w-[360px] fixed bottom-0 pb-8 pt-5 bg-white border-t">
       <FlexBox className="justify-between">
         {["main", "manage", "mypage"].map((type, index) => {
           return (
