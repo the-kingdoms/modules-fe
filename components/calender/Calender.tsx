@@ -20,7 +20,7 @@ interface CalenderProps {
  */
 export default function Calender({ day: paramDay, onClick }: CalenderProps) {
   const startDate = dayjs().startOf("week");
-  let currentDay = paramDay;
+  let currentDay: dayjs.Dayjs = paramDay as dayjs.Dayjs;
   if (currentDay === undefined) {
     currentDay = dayjs();
   }
