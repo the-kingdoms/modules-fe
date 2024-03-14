@@ -2,18 +2,20 @@ import FlexBox from "../../layout/FlexBox";
 
 interface ProfileProps {
   name: string;
-  size: "S" | "M" | "L";
+  size: "S" | "M1" | "M2" | "L";
   focus?: boolean;
 }
 
 const style = {
   S: "w-12 h-12",
-  M: "w-[72px] h-[72px]",
+  M1: "w-14 h-14",
+  M2: "w-[72px] h-[72px]",
   L: "w-24 h-24",
 };
 const textStyle = {
   S: "B1-medium",
-  M: "H4-bold",
+  M1: "H5-bold",
+  M2: "H4-bold",
   L: "H1",
 };
 const colorStyle = {
