@@ -62,19 +62,22 @@ export default function TabBarGage() {
   };
 
   return (
-    <div className="w-full fixed bottom-0 pb-8 pt-5 bg-white border-t">
-      <FlexBox className="justify-between">
-        {["main", "manage", "mypage"].map((type, index) => {
-          return (
-            <Status
-              key={index}
-              type={type as TabStatus}
-              selected={type === path}
-              onClick={() => selectHandle(type as TabStatus)}
-            />
-          );
-        })}
-      </FlexBox>
-    </div>
+    <>
+      <div className="w-full min-h-[100px]" />
+      <div className="w-full h-[100px] fixed bottom-0 pb-8 pt-5 bg-white border-t">
+        <FlexBox className="justify-between">
+          {["main", "manage", "mypage"].map((type, index) => {
+            return (
+              <Status
+                key={index}
+                type={type as TabStatus}
+                selected={type === path}
+                onClick={() => selectHandle(type as TabStatus)}
+              />
+            );
+          })}
+        </FlexBox>
+      </div>
+    </>
   );
 }
