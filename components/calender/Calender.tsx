@@ -5,8 +5,8 @@ type DayType = "월" | "화" | "수" | "목" | "금" | "토" | "일";
 const dayList: DayType[] = ["일", "월", "화", "수", "목", "금", "토"];
 
 interface CalenderProps {
-  day?: DayType;
-  onClick?: (date: DayType) => void;
+  day?: dayjs.Dayjs;
+  onClick?: (date: dayjs.Dayjs) => void;
 }
 
 /**
@@ -19,10 +19,10 @@ interface CalenderProps {
  * @example <Calender day="월" onClick={() => {}} />
  */
 export default function Calender({ day: paramDay, onClick }: CalenderProps) {
-  const startDate = dayjs().startOf("week").date();
+  const startDate = dayjs().startOf("week");
   let currentDay = paramDay;
   if (currentDay === undefined) {
-    currentDay = dayjs().format("ddd") as DayType;
+    currentDay = dayjs();
   }
   return (
     <FlexBox className="w-full justify-between">
@@ -31,20 +31,24 @@ export default function Calender({ day: paramDay, onClick }: CalenderProps) {
           key={index}
           type="button"
           className="w-full text-center"
-          onClick={() => onClick && onClick(day)}
+          onClick={() => onClick && onClick(startDate.add(index, "days"))}
         >
           <span className="C2 text-Gray5">{day}</span>
           <FlexBox
             direction="col"
             className={`mt-2 w-[24px] h-[24px] mx-auto rounded justify-center ${
-              currentDay === day && "bg-black"
+              currentDay.format("ddd") === day && "bg-black"
             }`}
           >
-            {currentDay === day ? (
-              <div className="B3-medium text-Gray1">{index + startDate}</div>
-            ) : (
-              <div className="B3-medium text-Gray6">{index + startDate}</div>
-            )}
+            <div
+              className={
+                currentDay.format("ddd") === day
+                  ? "B3-medium text-Gray1"
+                  : "B3-medium text-Gray6"
+              }
+            >
+              {startDate.add(index, "days").format("D")}
+            </div>
           </FlexBox>
         </button>
       ))}
