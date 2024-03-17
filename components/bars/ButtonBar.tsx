@@ -31,14 +31,17 @@ function Assist() {
 
 export default function ButtonBar({ button, isAssist }: ButtonBarProps) {
   return (
-    <FlexBox
-      direction="col"
-      className="w-full sticky bottom-0 pb-10 pt-3 px-4 bg-white border-t"
-    >
-      <FlexBox className="w-full gap-4">
-        {button}
-        {isAssist && <Assist />}
+    <>
+      <div className="w-full min-h-[100px]" />
+      <FlexBox
+        direction="col"
+        className="w-full min-h-[100px] fixed bottom-0 pb-10 pt-3 px-4 bg-white border-t"
+      >
+        <FlexBox className="w-full gap-4">
+          {button}
+          {isAssist && <Assist />}
+        </FlexBox>
       </FlexBox>
-    </FlexBox>
+    </>
   );
 }
