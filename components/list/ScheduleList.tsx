@@ -5,20 +5,20 @@ import styles from "./ScheduleList.module.css";
 
 interface ScheduleListProps {
   name: string;
-  position: "manager" | "parttime" | "etc";
+  role: "MANAGER" | "STAFF" | "OWNER";
   time: string;
   onDelete?: () => void;
 }
 
 const style = {
-  manager: "bg-Manager",
-  parttime: "bg-PartTime",
-  etc: "bg-ETC",
+  MANAGER: "bg-Manager",
+  STAFF: "bg-PartTime",
+  OWNER: "bg-ETC",
 };
 
 export default function ScheduleList({
   name,
-  position,
+  role,
   time,
   onDelete,
 }: ScheduleListProps) {
@@ -33,7 +33,7 @@ export default function ScheduleList({
     <FlexBox direction="row" className="w-full h-14 relative">
       <button
         type="button"
-        className={`absolute right-0 w-[280px] h-full rounded-xl ${style[position]}
+        className={`absolute right-0 w-[280px] h-full rounded-xl ${style[role]}
         ${selectList === null ? "" : selectList ? styles.appear : styles.disappear}`}
         onClick={clickList}
       >
