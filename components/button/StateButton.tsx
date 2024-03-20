@@ -1,12 +1,12 @@
 interface StateButtonProps {
-  type: "approve" | "disapprove" | "decline";
+  type: "APPROVED" | "DISAPPROVED" | "DECLINED";
   onclick?: () => void;
 }
 
 const style = {
-  approve: "bg-Approve text-white",
-  disapprove: "bg-Gray5 text-Gray4",
-  decline: "bg-Red text-white",
+  APPROVED: "bg-Approve text-white",
+  DISAPPROVED: "bg-Red text-white",
+  DECLINED: "bg-Gray5 text-Gray4",
 };
 
 export default function StateButton({ type, onclick }: StateButtonProps) {
@@ -19,11 +19,11 @@ export default function StateButton({ type, onclick }: StateButtonProps) {
       className={`w-[72px] h-[32px] rounded-lg B5-medium ${style[type]}`}
       onClick={handleClick}
     >
-      {type === "approve"
+      {type === "APPROVED"
         ? "승인"
-        : type === "disapprove"
-          ? "미승인"
-          : "거절하기"}
+        : type === "DISAPPROVED"
+          ? "거절하기"
+          : "미승인"}
     </button>
   );
 }
