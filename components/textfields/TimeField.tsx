@@ -76,6 +76,9 @@ export default function TimeField({
             onKeyDown={e => handleChange(e, 0)}
             onFocus={() => setFocus(true)}
             onBlur={() => setFocus(false)}
+            type="number"
+            pattern="[0-9]*"
+            inputMode="numeric"
           />
           <input
             ref={ref1}
@@ -84,6 +87,9 @@ export default function TimeField({
             onKeyDown={e => handleChange(e, 1)}
             onFocus={() => setFocus(true)}
             onBlur={() => setFocus(false)}
+            type="number"
+            pattern="[0-9]*"
+            inputMode="numeric"
           />
           <span className="mx-1">:</span>
           <input
@@ -93,6 +99,9 @@ export default function TimeField({
             onKeyDown={e => handleChange(e, 2)}
             onFocus={() => setFocus(true)}
             onBlur={() => setFocus(false)}
+            type="number"
+            pattern="[0-9]*"
+            inputMode="numeric"
           />
           <input
             ref={ref3}
@@ -101,6 +110,9 @@ export default function TimeField({
             onKeyDown={e => handleChange(e, 3)}
             onFocus={() => setFocus(true)}
             onBlur={() => setFocus(false)}
+            type="number"
+            pattern="[0-9]*"
+            inputMode="numeric"
           />
         </FlexBox>
       </button>
