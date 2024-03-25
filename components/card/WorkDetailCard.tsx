@@ -1,3 +1,4 @@
+import { calculateHours } from "@modules/components/card/calculateHours";
 import FlexBox from "@modules/layout/FlexBox";
 import dayjs from "dayjs";
 
@@ -19,8 +20,8 @@ export default function WorkDetailCard({
   endTime,
 }: WorkDetailCardProps) {
   const showWorkingTime = () => {
-    const start = dayjs(startTime).format("HH:mm");
-    const end = dayjs(endTime).format("HH:mm");
+    const start = startTime;
+    const end = endTime;
     return `${start} ~ ${end}`;
   };
 
@@ -33,12 +34,12 @@ export default function WorkDetailCard({
         <div className="B5-regular">
           {dayjs(date).locale("kr").format("M.DD dddd")}
         </div>
-        <div className="B3-medium">
-          {showWorkingTime()}
-          <span className="B4-medium ml-1">
-            ({dayjs(endTime).diff(dayjs(startTime), "hour")}시간)
+        <FlexBox className="gap-2">
+          <span className="B3-medium">{showWorkingTime()}</span>
+          <span className="B4-medium">
+            ({calculateHours(endTime, startTime)})
           </span>
-        </div>
+        </FlexBox>
       </FlexBox>
     );
   return (
