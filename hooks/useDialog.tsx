@@ -8,6 +8,9 @@ interface DialogProps {
   title: string;
   discription: string;
   type: "confirm" | "notice";
+  noticeText?: string;
+  confirmText?: string;
+  closeText?: string;
   onAction?: () => void;
   onClose?: () => void;
 }
@@ -16,6 +19,9 @@ function DialogTemplate({
   title,
   discription,
   type,
+  noticeText = "확인",
+  confirmText = "삭제",
+  closeText = "취소",
   onAction,
   onClose,
 }: DialogProps) {
@@ -37,7 +43,7 @@ function DialogTemplate({
               className="w-full B4-regular text-Gray5"
               onClick={onClose}
             >
-              확인
+              {noticeText}
             </button>
           ) : (
             <>
@@ -46,14 +52,14 @@ function DialogTemplate({
                 className="w-full B4-regular text-Red"
                 onClick={onAction}
               >
-                삭제
+                {confirmText}
               </button>
               <button
                 type="button"
                 className="w-full B4-regular text-Gray5"
                 onClick={onClose}
               >
-                취소
+                {closeText}
               </button>
             </>
           )}
