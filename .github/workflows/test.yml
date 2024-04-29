@@ -34,3 +34,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "v20.10.0"
+
+      - name: Build Storybook
+        run: yarn build-storybook --quiet
