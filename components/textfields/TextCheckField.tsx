@@ -1,4 +1,4 @@
-import Checkbox from "@modules/components/selections/Checkbox";
+import Checkbox from "../selections/Checkbox";
 import { useEffect, useRef, useState } from "react";
 import FlexBox from "../../layout/FlexBox";
 
@@ -34,7 +34,7 @@ export default function TextCheckField({
   useEffect(() => {
     ref.current?.focus();
     setHeight(
-      `${ref.current?.scrollHeight ? ref.current?.scrollHeight : "0"}px`,
+      `${ref.current?.scrollHeight ? ref.current?.scrollHeight : "0"}px`
     );
   }, [focus]);
 
@@ -52,7 +52,7 @@ export default function TextCheckField({
     setValue && setValue(e.target.value);
     props.onChange && props.onChange(e);
     setHeight(
-      `${ref.current?.scrollHeight ? ref.current?.scrollHeight : "0"}px`,
+      `${ref.current?.scrollHeight ? ref.current?.scrollHeight : "0"}px`
     );
   };
 
@@ -71,7 +71,7 @@ export default function TextCheckField({
             B3-medium text-black w-full break-words bg-transparent outline-none overflow-hidden`}
             value={value}
             onChange={handleChange}
-            onFocus={e => {
+            onFocus={(e) => {
               e.target.selectionStart = e.target.value.length;
               props.onFocus && props.onFocus(e);
             }}
@@ -85,6 +85,7 @@ export default function TextCheckField({
               if (index === 0)
                 return (
                   <div
+                    key={index}
                     className={`B3-medium ${inactive || !value ? "text-Gray5" : "text-black"}`}
                   >
                     {(value || props.placeholder)?.split("\n")[0]}
