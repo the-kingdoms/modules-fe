@@ -1,6 +1,6 @@
 {
   "name": "@kiyeonp/eolluga-ui-last",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "next.config.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
