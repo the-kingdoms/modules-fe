@@ -1,9 +1,9 @@
 import FlexBox from "../../layout/FlexBox";
 import Icon from "../../layout/Icon";
 import { useState } from "react";
-import styles from "./ScheduleList.module.css";
+//import styles from "./ScheduleList.module.css";
 
-interface ScheduleListProps {
+/*interface ScheduleListProps {
   name: string;
   role: "MANAGER" | "STAFF" | "OWNER";
   time: string;
@@ -56,4 +56,4 @@ export default function ScheduleList({
   );
 }
 
-export type { ScheduleListProps };
+export type { ScheduleListProps };*/

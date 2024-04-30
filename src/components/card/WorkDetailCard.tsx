@@ -1,4 +1,4 @@
-import { calculateHours } from "../card/calculateHours";
+import { calculateHours } from "./calculateHours";
 import FlexBox from "../../layout/FlexBox";
 import dayjs from "dayjs";
 

@@ -37,7 +37,7 @@ export default function TextAreaField({
         ref.current?.scrollHeight && ref.current?.scrollHeight > 56
           ? 56
           : ref.current?.scrollHeight
-      }px`,
+      }px`
     );
     if (ref.current?.value?.length && ref.current?.value?.length > 40)
       setFontSize("B4-medium");
