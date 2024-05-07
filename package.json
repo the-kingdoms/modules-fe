@@ -11,7 +11,8 @@
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "chromatic": "npx chromatic --project-token=chpt_968094c52f8c0e4"
   },
   "dependencies": {
     "@rollup/plugin-image": "^3.0.3",
@@ -53,6 +54,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "chromatic": "^11.3.0",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
     "eslint-plugin-storybook": "^0.8.0",
