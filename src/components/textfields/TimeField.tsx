@@ -35,7 +35,7 @@ export default function TimeField({
 
   const handleChange = (
     e: React.KeyboardEvent<HTMLInputElement>,
-    index: number,
+    index: number
   ) => {
     const { key } = e;
     if (key === "Backspace") {
@@ -73,7 +73,7 @@ export default function TimeField({
             ref={ref0}
             value={value[0]}
             className="outline-none w-[12px] text-center selection:underline bg-transparent"
-            onKeyDown={e => handleChange(e, 0)}
+            onKeyDown={(e) => handleChange(e, 0)}
             onFocus={() => setFocus(true)}
             onBlur={() => setFocus(false)}
             pattern="[0-9]*"
@@ -83,7 +83,7 @@ export default function TimeField({
             ref={ref1}
             value={value[1]}
             className="outline-none w-[12px] text-center selection:underline bg-transparent"
-            onKeyDown={e => handleChange(e, 1)}
+            onKeyDown={(e) => handleChange(e, 1)}
             onFocus={() => setFocus(true)}
             onBlur={() => setFocus(false)}
             pattern="[0-9]*"
@@ -94,7 +94,7 @@ export default function TimeField({
             ref={ref2}
             value={value[2]}
             className="outline-none w-[12px] text-center selection:underline bg-transparent"
-            onKeyDown={e => handleChange(e, 2)}
+            onKeyDown={(e) => handleChange(e, 2)}
             onFocus={() => setFocus(true)}
             onBlur={() => setFocus(false)}
             pattern="[0-9]*"
@@ -104,7 +104,7 @@ export default function TimeField({
             ref={ref3}
             value={value[3]}
             className="outline-none w-[12px] text-center selection:underline bg-transparent"
-            onKeyDown={e => handleChange(e, 3)}
+            onKeyDown={(e) => handleChange(e, 3)}
             onFocus={() => setFocus(true)}
             onBlur={() => setFocus(false)}
             pattern="[0-9]*"

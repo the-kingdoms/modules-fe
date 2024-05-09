@@ -15,19 +15,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Cache yarn dependencies and cypress
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Cache yarn dependencies
         uses: actions/cache@v2
         id: yarn-cache
         with:
-          path: |
-            ~/.cache/Cypress
-            node_modules
-          key: ${{ runner.os }}-yarn-v1-${{ hashFiles('**/yarn.lock') }}
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-v1
-
-      - name: Install dependencies if cache invalid
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
+            ${{ runner.os }}-yarn-
+      - if: ${{steps.yarn-cache.outputs.cache-hit != 'true'}}
         run: yarn
 
       - name: Set up Node.js
@@ -35,5 +35,5 @@ jobs:
         with:
           node-version: "v20.10.0"
 
-      - name: Build Storybook
-        run: yarn build-storybook --quiet
+      - name: Run test
+        run: yarn build

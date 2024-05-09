@@ -88,7 +88,7 @@ function useDialog(): UseDialogType {
         {...props}
         onAction={onClickAction}
         onClose={onClickClose}
-      />,
+      />
     );
   };
   return { dialog, openDialog, closeDialog };

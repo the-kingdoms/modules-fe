@@ -1,5 +1,5 @@
-import { calculateHours } from "@modules/components/card/calculateHours";
-import FlexBox from "@modules/layout/FlexBox";
+import { calculateHours } from "./calculateHours";
+import FlexBox from "../../layout/FlexBox";
 import dayjs from "dayjs";
 
 type WorkType = REGULAR | EXTRA;

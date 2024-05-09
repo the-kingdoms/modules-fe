@@ -1,0 +1,12 @@
+.github/
+.storybook/
+app/
+.eslintrc.json
+.gitignore
+.npmignore
+next.config.js
+postcss.config.js
+tailwind.config.ts
+tsconfig.json
+yarn.lock
+node_modules/
