@@ -5,9 +5,12 @@
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "dev": "next dev",
     "build": "npx rollup -c",
+    "start": "next start",
+    "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build && next export",
+    "build-storybook": "storybook build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
