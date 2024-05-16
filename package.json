@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "dev": "next dev",
-    "build": "rollup -c",
+    "build": "npx rollup -c",
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
