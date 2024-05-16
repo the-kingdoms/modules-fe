@@ -1410,7 +1410,7 @@ var imageLoader = {};
 
 var matchRemotePattern = {};
 
-var __dirname$3 = '/Users\BangAndroid\Desktop\modules-fe\node_modules\next\dist\compiled\micromatch';
+var __dirname$3 = '/Users\BangAndroid\Documents\Eollluga_modules\modules-fe\node_modules\next\dist\compiled\micromatch';
 
 var micromatch = {exports: {}};
 
@@ -7505,7 +7505,7 @@ function requireAppRouterHeaders () {
 
 var getCookieParser = {};
 
-var __dirname$2 = '/Users\BangAndroid\Desktop\modules-fe\node_modules\next\dist\compiled\cookie';
+var __dirname$2 = '/Users\BangAndroid\Documents\Eollluga_modules\modules-fe\node_modules\next\dist\compiled\cookie';
 
 var cookie = {exports: {}};
 
@@ -9539,7 +9539,7 @@ function requireReactIs () {
 
 var bloomFilter = {};
 
-var __dirname$1 = '/Users\BangAndroid\Desktop\modules-fe\node_modules\next\dist\compiled\gzip-size';
+var __dirname$1 = '/Users\BangAndroid\Documents\Eollluga_modules\modules-fe\node_modules\next\dist\compiled\gzip-size';
 
 var gzipSize = {exports: {}};
 

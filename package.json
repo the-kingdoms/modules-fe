@@ -1,12 +1,12 @@
 {
-  "name": "@kiyeonp/eolluga-ui-last",
-  "version": "0.0.7",
+  "name": "eolluga-ui",
+  "version": "1.0.0",
   "main": "next.config.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "dev": "next dev",
-    "build": "rollup -c",
+    "build": "npx rollup -c",
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
