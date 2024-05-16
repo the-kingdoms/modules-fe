@@ -5,14 +5,10 @@
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "dev": "next dev",
     "build": "npx rollup -c",
-    "start": "next start",
-    "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "chromatic": "npx chromatic --project-token=chpt_968094c52f8c0e4"
+    "build-storybook": "storybook build && next export",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "@rollup/plugin-image": "^3.0.3",
