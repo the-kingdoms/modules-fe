@@ -1,4 +1,4 @@
-import { Button } from "./stories/Button";
+import { Button } from "../storybook_amplify/stories/Button";
 export { Button };
 
 import Divider from "./layout/Divider";
