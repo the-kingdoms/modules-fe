@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "storybook": "storybook dev -p 6006",
-    "build": "storybook build",
-    "postbuild": "chmod +x postbuild.sh && bash ./postbuild.sh"
+    "build": "storybook build"
   },
   "dependencies": {
-    "express": "^4.19.2",
     "next": "^14.2.3",
     "storybook": "^8.1.1"
   },
