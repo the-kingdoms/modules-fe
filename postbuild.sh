@@ -11,4 +11,4 @@ yarn install --modules-folder ./.amplify-hosting/compute/default/node_modules
 cp -r storybook-static ./.amplify-hosting/compute/default/storybook-static
 
 # deploy-manifest 파일 복사
-cp deploy-manifest.json ./.amplify-hosting/deploy-manifest.jsons
+cp deploy-manifest.json ./.amplify-hosting/deploy-manifest.json
