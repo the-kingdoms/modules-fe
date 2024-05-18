@@ -6,6 +6,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "express": "^4.19.2",
     "next": "^14.2.3",
     "storybook": "^8.1.1"
   },
