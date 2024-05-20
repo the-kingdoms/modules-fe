@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "scripts": {
     "storybook": "storybook dev -p 6006",
-    "build": "storybook build"
+    "build": "storybook build",
+    "deploy-storybook": "storybook-to-aws-s3 --bucket-path=s3-eolluga-ui --aws-profile=NONE"
   },
   "dependencies": {
+    "@storybook/storybook-deployer": "^2.8.16",
     "next": "^14.2.3",
     "storybook": "^8.1.1"
   },
