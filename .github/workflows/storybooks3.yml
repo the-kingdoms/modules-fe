@@ -53,4 +53,4 @@ jobs:
           path: ./storybook-static
 
       - name: Upload to S3
-        run: aws s3 sync --region ap-northeast-2 ./storybook-static s3://s3-eolluga-ui --delete
+        run: yarn deploy storybook
