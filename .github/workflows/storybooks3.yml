@@ -3,10 +3,10 @@ name: Storybook Deploy To S3
 on:
   push:
     branches:
-      - develop
+      - feature/storybook
   pull_request:
     branches:
-      - develop
+      - feature/storybook
 
 jobs:
   build:
