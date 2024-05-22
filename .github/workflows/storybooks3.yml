@@ -35,6 +35,9 @@ jobs:
       - name: Build Storybook
         run: yarn build
 
+      - name: Log AWS Secret Key (for debugging purposes only)
+        run: echo "AWS Secret Key:" ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
