@@ -3,10 +3,10 @@ name: Storybook Deploy To S3
 on:
   push:
     branches:
-      - feature/storybook
+      - develop
   pull_request:
     branches:
-      - feature/storybook
+      - develop
 
 jobs:
   build:
@@ -15,8 +15,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          submodules: "true"
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -51,4 +49,4 @@ jobs:
           path: ./storybook-static
 
       - name: Upload to S3
-        run: yarn deploy storybook
+        run: aws s3 sync --region ap-northeast-2 ./storybook-static s3://s3-eolluga-ui --delete
