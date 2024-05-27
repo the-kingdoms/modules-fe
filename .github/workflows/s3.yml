@@ -1,6 +1,6 @@
 name: Storybook Deploy To S3
 
-#branch, cache 수정
+#branch, cache 수정, 검증 필요
 
 on:
   push:

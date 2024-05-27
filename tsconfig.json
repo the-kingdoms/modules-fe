@@ -16,8 +16,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": false,
-    "jsx": "react-jsx"
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "include": ["src"],
+  "include": ["custom.d.ts", "src", ".next/types/**/*.ts"],
   "exclude": ["node_modules", "dist"]
 }
