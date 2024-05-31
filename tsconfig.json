@@ -10,9 +10,11 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
+    "baseUrl": ".",
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
     "moduleResolution": "node",
+
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": false,

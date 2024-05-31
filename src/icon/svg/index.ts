@@ -1,3 +1,4 @@
-import Shape from "./Shape.svg";
+import account from "./account.svg";
+import bell from "./bell.svg";
 
-export { Shape };
+export { account, bell };
