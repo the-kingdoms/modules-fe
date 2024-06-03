@@ -1,14 +1,9 @@
 name: Run modules-fe Test
 
-# cache 수정
-
 on:
-  push:
-    branches:
-      - develop
   pull_request:
     branches:
-      - develop
+      - StorybookNpm
 
 jobs:
   build:
