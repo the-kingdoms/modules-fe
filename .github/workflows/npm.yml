@@ -1,21 +1,19 @@
-name: Run modules-fe Test
-
-# cache 수정
+name: Npm Publish
 
 on:
   push:
-    branches:
-      - develop
-  pull_request:
-    branches:
-      - develop
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -39,5 +37,10 @@ jobs:
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn install
 
-      - name: Run test
-        run: yarn build-storybook
+      - name: Npm Package Build
+        run: yarn build-npm
+
+      - name: Publish to NPM
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.PACKAGE_PUBLISH_KEY_NPM }}
