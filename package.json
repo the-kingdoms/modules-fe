@@ -5,11 +5,7 @@
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "dev": "next dev",
     "build-npm": "rollup -c",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
