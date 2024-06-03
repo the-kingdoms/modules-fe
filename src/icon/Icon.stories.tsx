@@ -1,5 +1,5 @@
 import { Meta, StoryFn } from "@storybook/react/*";
-import Icon, { iconTypes } from "./Icon";
+import Icon, { iconKeyList } from "./Icon";
 import { FlexBox } from "../layout";
 
 export default {
@@ -28,7 +28,7 @@ CustomSize.args = {
 
 export const ListOfIcons: StoryFn = (args) => (
   <FlexBox direction="col" className="gap-8">
-    {iconTypes.map((icon) => (
+    {iconKeyList.map((icon) => (
       <Icon {...args} key={icon} icon={icon} size={24} />
     ))}
   </FlexBox>

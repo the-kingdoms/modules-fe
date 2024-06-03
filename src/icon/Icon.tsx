@@ -1,13 +1,13 @@
 import * as icons from "./svg";
 
-type IconType = keyof typeof icons;
-export const iconTypes: IconType[] = Object.keys(icons) as any[];
+type iconKey = keyof typeof icons;
+export const iconKeyList: iconKey[] = Object.keys(icons) as any[];
 
-export type IconProps = {
+type IconProps = {
   /**
    * 아이콘 타입
    */
-  icon: IconType;
+  icon: iconKey;
   /**
    * 아이콘 크기
    */
