@@ -1,16 +1,12 @@
 name: Storybook Deploy To S3
 
-#cache 수정
-
 on:
-  pull_request:
+  push:
     branches:
-      - develop
-    types:
-      - closed
+      - StorybookNpm
 
 jobs:
-  build:
+  publish-storybook:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -47,12 +43,6 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-2
-
-      - name: Upload storybook build files to temp artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: Storybook
-          path: ./storybook-static
 
       - name: Upload to S3
         run: aws s3 sync --region ap-northeast-2 ./storybook-static s3://s3-eolluga-ui --delete
