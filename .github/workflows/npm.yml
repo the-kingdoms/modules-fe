@@ -22,27 +22,15 @@ jobs:
         with:
           node-version: "v20.10.0"
 
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Cache yarn dependencies
-        uses: actions/cache@v3
-        id: yarn-cache
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
       - name: Install dependencies
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn install
 
       - name: Npm Package Build
         run: yarn build-npm
 
       - name: Publish to NPM
-        run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.PACKAGE_PUBLISH_KEY_NPM }}
+        uses: JS-DevTools/npm-publish@v3
+        with:
+          token: ${{secrets.PACKAGE_PUBLISH_KEY_NPM }}
+          access: public
+          package: ./dist
