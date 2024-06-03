@@ -13,7 +13,7 @@ import { createRequire } from "node:module";
 const requireFile = createRequire(import.meta.url);
 const packageJson = requireFile("./package.json");
 
-export default [
+const configList = [
   {
     input: "src/index.ts",
     output: [
@@ -36,6 +36,7 @@ export default [
       postcss({
         extensions: [".css"],
       }),
+
     ],
   },
   {
@@ -45,3 +46,5 @@ export default [
     external: [/\.css$/],
   },
 ];
+
+export default configList;
