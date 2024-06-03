@@ -1,6 +1,6 @@
 {
-  "name": "@kiyeonp/new-testing",
-  "version": "0.5.0",
+  "name": "@eolluga/eolluga-ui",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
