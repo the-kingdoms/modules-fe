@@ -20,14 +20,8 @@ CustomIcon.args = {
   size: 24,
 };
 
-export const CustomSize = Template.bind({});
-CustomSize.args = {
-  size: 48,
-  icon: "bell",
-};
-
 export const ListOfIcons: StoryFn = (args) => (
-  <FlexBox direction="col" className="gap-8">
+  <FlexBox direction="row" className="gap-12">
     {iconKeyList.map((icon) => (
       <Icon {...args} key={icon} icon={icon} size={24} />
     ))}

@@ -1,0 +1,14 @@
+/.github
+/.next
+/.storybook
+/node_modules
+.eslintrc.json
+.gitignore
+.npmignore
+custom.d.ts
+next.config.js
+package.json
+rollup.config.mjs
+tailwind.config.ts
+tsconfig.json
+yarn.lock
