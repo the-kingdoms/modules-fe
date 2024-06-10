@@ -21,12 +21,16 @@ CustomIcon.args = {
 };
 
 export const ListOfIcons: StoryFn = (args) => (
-  <FlexBox direction="row" className="gap-12">
+  <FlexBox direction="row" className="gap-7 p-4">
     {iconKeyList.map((icon) => (
+      <FlexBox direction="col">
       <Icon {...args} key={icon} icon={icon} size={24} />
+      <span className="text-black">{icon}</span>
+      </FlexBox>
     ))}
   </FlexBox>
 );
 
-// default 적용
-// import 적용
+ListOfIcons.parameters = {
+  layout: "", 
+};
