@@ -19,7 +19,7 @@ type IconProps = {
  * 이 컴포넌트는 svg 형태로 아이콘을 보여주며, props를 사용하여 아이콘의 크기와 스타일을 정의 할 수 있습니다.
  */
 
-const Icon = ({ icon, size, className }: IconProps) => {
+const Icon = ({ icon, size = 24, className }: IconProps) => {
   const SVGIcon = icons[icon];
 
   return (
