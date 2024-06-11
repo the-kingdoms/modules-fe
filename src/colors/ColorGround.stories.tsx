@@ -2,25 +2,25 @@ import { ColorItem, ColorPalette, Meta } from "@storybook/blocks";
 import ColorItemList from "./ColorItems";
 
 export default {
-  title: "Design System/Palette",
+  title: "Components/Color Ground",
   component: ColorItemList,
   tags: ["autodocs"],
 };
 
-export const ColorDocs = () => (
+export const Docs = () => (
   <>
-    <Meta title="Design System/Palette" />
+    <Meta title="Components/Color Ground" />
     <ColorPalette>
       <ColorItemList />
     </ColorPalette>
   </>
 );
 
-ColorDocs.parameters = {
+Docs.parameters = {
   docs: {
     page: () => (
       <>
-        <Meta title="Design System/Palette" />
+        <Meta title="Components/Color Ground" />
 
         <ColorPalette>
           <ColorItemList />
