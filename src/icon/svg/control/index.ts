@@ -1,3 +1,1 @@
-import pause from "./pause.svg";
-
-export { pause };
+export { default as pause } from './pause.svg';

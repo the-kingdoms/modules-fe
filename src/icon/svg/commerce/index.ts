@@ -1,8 +1,6 @@
-import account from "./account.svg";
-import bell from "./bell.svg";
-import bank from "./bank.svg";
-import bottle from "./bottle.svg";
-import dollar from "./dollar.svg";
-import won from "./won.svg";
-
-export { account, bell, bank, bottle, dollar, won};
+export { default as account } from './account.svg';
+export { default as bank } from './bank.svg';
+export { default as bell } from './bell.svg';
+export { default as bottle } from './bottle.svg';
+export { default as dollar } from './dollar.svg';
+export { default as won } from './won.svg';
