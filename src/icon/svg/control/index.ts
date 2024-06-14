@@ -1,0 +1,1 @@
+export { default as pause } from './pause.svg';
