@@ -1,7 +1,17 @@
-import * as icons from "./svg";
+import * as Commerce from "./svg/commerce";
+import * as Control from "./svg/control";
 
-type iconKey = keyof typeof icons;
-export const iconKeyList: iconKey[] = Object.keys(icons) as any[];
+export const IconCategory = {
+  Commerce: { ...Commerce },
+  Control: { ...Control },
+};
+
+const icons = {
+  ...Commerce,
+  ...Control,
+};
+
+export type iconKey = keyof typeof icons;
 
 type IconProps = {
   /**
