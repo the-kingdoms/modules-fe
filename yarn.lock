@@ -2541,7 +2541,7 @@
   resolved "https://registry.yarnpkg.com/@storybook/react-dom-shim/-/react-dom-shim-8.1.10.tgz#c4c8cb47827185e240972358f38081290cecb8b8"
   integrity sha512-+HS75Pq8jb3xkVq0hK33D84aGfbJCURRB+GN2vfTMmmjguQt7z2+MnGqRgrUCt6h2rxU3VdPg9OBnYi/UC0Zrg==
 
-"@storybook/react@8.1.10", "@storybook/react@^8.1.9":
+"@storybook/react@8.1.10", "@storybook/react@^8.1.3":
   version "8.1.10"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-8.1.10.tgz#7fd32dbcb2ed5553f63b28141e3a7b6ce38edd91"
   integrity sha512-y0ycq19tTLLk+4rB+nfCPCtoFBWC0QvmMaJY32dbAjWPk+UNFGhWdqjg0oP1NwXYL18WnhRzlyz1Rojw0aXk1w==
