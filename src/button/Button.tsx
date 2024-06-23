@@ -1,16 +1,16 @@
 import React from "react";
 
-interface TestButtonProps {
+export interface TestButtonProps {
   size: "L" | "M" | "S" | "full";
   className?: string;
   text: string;
-  type?: "filled" | "outline" | "border" | "danger" | "disabled";
+  type?: "primary" | "secondary" | "border" | "danger" | "disabled";
   isClicked?: boolean;
   inactive?: boolean;
   onClick?: () => void;
 }
 
-const sizeStyle = {
+export const sizeStyle = {
   full: "w-full",
   L: "w-[328px]",
   M: "w-[160px]",
@@ -18,13 +18,13 @@ const sizeStyle = {
 };
 
 export const buttonStyle = {
-  filled: {
+  primary: {
     hover: "bg-Hover-Black",
     active: "bg-Gray-100",
     inactive: "bg-Black",
     clicked: "bg-Black text-Gray-40",
   },
-  outline: {
+  secondary: {
     active: "bg-white border-2 border-Black text-Black",
     inactive: "bg-white border-2 border-Gray-30 text-Gray-40",
     clicked: "bg-Gray-30 border-2 border-Gray-40 text-Gray-40",
@@ -48,7 +48,7 @@ export default function TestButton({
   size,
   className,
   text,
-  type = "filled",
+  type = "primary",
   isClicked,
   inactive,
   onClick,
@@ -59,7 +59,7 @@ export default function TestButton({
   };
 
   const stateClass =
-    type === "filled" || type === "outline"
+    type === "primary" || type === "secondary"
       ? buttonStyle[type][
           inactive ? "inactive" : isClicked ? "clicked" : "active"
         ]
