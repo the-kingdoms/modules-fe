@@ -8,13 +8,13 @@ const config: StorybookConfig = {
     "@storybook/addon-interactions",
     "@storybook/addon-styling-webpack",
     {
-      name: '@storybook/addon-postcss',
+      name: "@storybook/addon-postcss",
       options: {
         cssLoaderOptions: {
           importLoaders: 1,
         },
         postcssLoaderOptions: {
-          implementation: require('postcss'),
+          implementation: require("postcss"),
         },
       },
     },

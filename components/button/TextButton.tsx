@@ -1,3 +1,5 @@
+import React from "react";
+
 interface TextButtonProps {
   size: "L" | "M" | "S" | "full";
   className?: string;
