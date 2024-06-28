@@ -1,0 +1,9 @@
+export { default as Apple } from './Apple.svg';
+export { default as Google_Color } from './Google-Color.svg';
+export { default as Google_Filled } from './Google-Filled.svg';
+export { default as Instagram_Color } from './Instagram-Color.svg';
+export { default as Instagram_Filled } from './Instagram-Filled.svg';
+export { default as Kakaotalk_Color } from './Kakaotalk-Color.svg';
+export { default as Kakaotalk_Filled } from './Kakaotalk-Filled.svg';
+export { default as Meta_Color } from './Meta-Color.svg';
+export { default as Meta_Filled } from './Meta-Filled.svg';

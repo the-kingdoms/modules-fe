@@ -1,6 +1,6 @@
 import { Meta, StoryFn } from "@storybook/react/*";
 import Icon, { iconKey, IconCategory } from "./Icon";
-import { FlexBox } from "../layout";
+import { FlexBox} from "../layout";
 
 export default {
   title: "Components/Icon",
@@ -16,7 +16,7 @@ const Template: StoryFn<typeof Icon> = (args) => <Icon {...args} />;
 
 export const CustomIcon = Template.bind({});
 CustomIcon.args = {
-  icon: "bell",
+  icon: "Bell_Table",
   size: 24,
 };
 

@@ -1,0 +1,14 @@
+export { default as Calculation } from './Calculation.svg';
+export { default as Chart_Area } from './Chart-Area.svg';
+export { default as Chart_Bar_Horizontal } from './Chart-Bar-Horizontal.svg';
+export { default as Chart_Bar_Vertical } from './Chart-Bar-Vertical.svg';
+export { default as Chart_Cohort } from './Chart-Cohort.svg';
+export { default as Chart_Line } from './Chart-Line.svg';
+export { default as Chart_Pie } from './Chart-Pie.svg';
+export { default as Chart_Treemap } from './Chart-Treemap.svg';
+export { default as DataBase_Multiple } from './DataBase-Multiple.svg';
+export { default as Database } from './Database.svg';
+export { default as Funnel } from './Funnel.svg';
+export { default as Precentation } from './Precentation.svg';
+export { default as Progressbar } from './Progressbar.svg';
+export { default as Trending } from './Trending.svg';
