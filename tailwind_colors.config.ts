@@ -3,7 +3,7 @@ const tailwindColorsConfig = {
     extend: {
       colors: {
         // Neutral
-        White: "#fbfbfb",
+        White: "#ffffff",
         Black: "#131313",
         "Hover-White": "#e9e9e9",
         "Hover-Black": "#171717",
