@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 import { merge } from "lodash";
-import tailwindColorsConfig from "./tailwind_colors.config";
+import tailwindCustomConfig from "./tailwind_custom.config";
 
 const baseConfig: Config = {
   content: [
@@ -18,6 +18,6 @@ const baseConfig: Config = {
   },
   plugins: [],
 };
-const config: Config = merge(baseConfig, tailwindColorsConfig);
+const config: Config = merge(baseConfig, tailwindCustomConfig);
 
 export default config;

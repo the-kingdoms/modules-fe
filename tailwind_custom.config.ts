@@ -1,6 +1,32 @@
-const tailwindColorsConfig = {
+const tailwindCustomConfig = {
   theme: {
     extend: {
+      spacing: {
+        "spacing-01": "0.25rem",
+        "spacing-02": "0.5rem",
+        "spacing-03": "0.75rem",
+        "spacing-04": "1rem",
+        "spacing-05": "1.25rem",
+        "spacing-06": "1.5rem",
+        "spacing-07": "1.75rem",
+        "spacing-08": "2rem",
+        "spacing-09": "2.5rem",
+        "spacing-10": "3rem",
+        "spacing-11": "4rem",
+        "spacing-12": "5rem",
+        "spacing-13": "6rem",
+        "spacing-14": "7.5rem",
+        "spacing-15": "10rem",
+      },
+      borderRadius: {
+        "radius-01": "0.125rem",
+        "radius-02": "0.25rem",
+        "radius-03": "0.375rem",
+        "radius-04": "0.5rem",
+        "radius-05": "0.75rem",
+        "radius-06": "1rem",
+        "radius-circle": "62.5rem",
+      },
       colors: {
         // Neutral
         White: "#ffffff",
@@ -232,4 +258,4 @@ const tailwindColorsConfig = {
   },
 };
 
-export default tailwindColorsConfig;
+export default tailwindCustomConfig;
