@@ -1,6 +1,5 @@
 import { Meta, StoryFn } from "@storybook/react";
 import TestButton, { buttonStyle } from "./Button";
-import TestButton2 from "./Button2";
 import { getColorInfo, renderInfo } from "./getColorInfo";
 
 export default {
@@ -14,17 +13,27 @@ export default {
     type: {
       control: {
         type: "select",
-        options: ["primary", "outline", "border", "danger", "disabled"],
+        options: ["primary", "secondary", "border", "ghost"],
       },
     },
     size: {
-      control: { type: "select", options: ["L", "M", "S", "full"] },
+      control: {
+        type: "select",
+        options: ["L", "M", "S", "full"],
+      },
+    },
+    variant: {
+      control: {
+        type: "select",
+        options: ["default", "danger", "elevated"],
+      },
     },
   },
 } as Meta<typeof TestButton>;
 
 const Template: StoryFn<typeof TestButton> = (args) => {
   const color = getColorInfo(args, buttonStyle);
+
   return (
     <>
       <TestButton {...args} />
@@ -34,28 +43,10 @@ const Template: StoryFn<typeof TestButton> = (args) => {
 };
 export const CustomButton = Template.bind({});
 CustomButton.args = {
-  size: "M",
-  text: "Hello Button",
+  size: "L",
+  text: "Button",
   type: "primary",
-  isClicked: false,
-  inactive: false,
-  className: "",
-};
-
-const Template2: StoryFn<typeof TestButton2> = (args) => {
-  const color = getColorInfo(args, buttonStyle);
-  return (
-    <>
-      <TestButton2 {...args} />
-      {renderInfo(args, color)}
-    </>
-  );
-};
-export const CustomButton2 = Template2.bind({});
-CustomButton2.args = {
-  size: "M",
-  text: "Hello Button",
-  type: "primary",
+  variant: "default",
   isClicked: false,
   inactive: false,
   className: "",

@@ -1,41 +1,37 @@
-import { TestButtonProps } from "./Button";
+import { TestButtonProps, buttonStyle } from "./Button";
 
 export const getColorInfo = (args: TestButtonProps, styles: any) => {
   const type = args.type || "primary";
-  const state = args.isClicked
-    ? "clicked"
-    : args.inactive
-      ? "inactive"
-      : "active";
+  let state = "default";
 
-  if (type === "primary" || type === "secondary") {
-    return styles[type][state];
-  } else if (type === "border" || type === "danger") {
-    return styles[type][
-      args.inactive ? "default" : args.isClicked ? "active" : "hover"
-    ];
-  } else {
-    return styles[type].default;
+  if (args.inactive) {
+    state = "disabled";
+  } else if (args.isClicked) {
+    state = "focus";
+  } else if (args.isClicked === false && !args.inactive) {
+    state = "active";
   }
+
+  return styles[type][state] || styles[type].default || "";
 };
 
-const getClassName = (color: string) => {
-  return color
-    .split(" ")
-    .map((cls) => `.${cls}`)
-    .join(" ");
-};
+export const renderInfo = (args: TestButtonProps, color: string) => {
+  let variant = args.variant || "default";
+  let type = args.type || "primary";
 
-export const renderInfo = (args: TestButtonProps, color: string) => (
-  <div style={{ marginTop: "16px" }}>
-    <strong>Token:</strong> {args.type}
-    <br />
-    <strong>State:</strong>{" "}
-    {args.isClicked ? "clicked" : args.inactive ? "inactive" : "active"}
-    <br />
-    <strong>Color:</strong>{" "}
-    {color.includes("bg-") ? color.replace("bg-", "") : "N/A"}
-    <br />
-    <strong>ClassName:</strong> {getClassName(color)}
-  </div>
-);
+  let className = `${color} ${buttonStyle[type]?.[variant] || ""}`;
+  return (
+    <div style={{ marginTop: "16px" }}>
+      <strong>Type:</strong> {args.type}
+      <br />
+      <strong>Variant:</strong> {args.variant}
+      <br />
+      <strong>Size:</strong> {args.size}
+      <br />
+      <strong>State:</strong>{" "}
+      {args.inactive ? "disabled" : args.isClicked ? "focus" : "active"}
+      <br />
+      <strong>ClassName:</strong> {className}
+    </div>
+  );
+};
