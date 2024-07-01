@@ -1,17 +1,17 @@
-import * as Commerce from './svg/Commerce/index';
-import * as Control from './svg/Control/index';
-import * as Data from './svg/Data/index';
-import * as File from './svg/File/index';
-import * as Formatting from './svg/Formatting/index';
-import * as Modifier from './svg/Modifier/index';
-import * as Navigation from './svg/Navigation/index';
-import * as Social from './svg/Social/index';
-import * as Status from './svg/Status/index';
-import * as Operation from './svg/Operation/index';
-import * as Technology from './svg/Technology/index';
-import * as Time from './svg/Time/index';
-import * as Toggle from './svg/Toggle/index';
-import * as User from './svg/User/index';
+import * as Commerce from './svg/commerce';
+import * as Control from './svg/control';
+import * as Data from './svg/data';
+import * as File from './svg/file';
+import * as Formatting from './svg/formatting';
+import * as Modifier from './svg/modifier';
+import * as Navigation from './svg/navigation';
+import * as Social from './svg/social';
+import * as Status from './svg/status';
+import * as Operation from './svg/operation';
+import * as Technology from './svg/technology';
+import * as Time from './svg/time';
+import * as Toggle from './svg/toggle';
+import * as User from './svg/user';
 
 export const IconCategory = {
     Commerce: { ...Commerce },
