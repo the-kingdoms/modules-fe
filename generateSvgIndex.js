@@ -16,8 +16,15 @@ function generateIndexFiles(rootDirectory) {
     const exports = files
       .filter(file => file.endsWith('.svg'))
       .map(file => {
+        const filePath = path.join(directory, file);
         const fileName = path.parse(file).name;
-        return `export { default as ${fileName} } from './${fileName}.svg';`;
+        const sanitizedFileName = fileName.replace(/-/g, '_');
+
+        let svgContent = fs.readFileSync(filePath, 'utf-8');
+        svgContent = updateSvgDimensions(svgContent);
+        fs.writeFileSync(filePath, svgContent);
+
+        return `export { default as ${sanitizedFileName} } from './${fileName}.svg';`;
       });
 
     const content = exports.join('\n');
@@ -29,6 +36,11 @@ function getDirectories(directory) {
   return fs.readdirSync(directory, { withFileTypes: true })
     .filter(dirent => dirent.isDirectory())
     .map(dirent => path.join(directory, dirent.name));
+}
+
+function updateSvgDimensions(svgContent) {
+  svgContent = svgContent.replace(/(width|height)="[^"]*"/g, '$1="current"');
+  return svgContent;
 }
 
 generateIndexFiles(SVG_ROOT_DIRECTORY);
