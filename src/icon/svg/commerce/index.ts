@@ -1,4 +1,4 @@
-export { default as account } from './Account.svg';
+export { default as account } from './account.svg';
 /*export { default as Bell_Table } from './Bell-Table.svg';
 export { default as Bottle_Multiple } from './Bottle-Multiple.svg';
 export { default as Bottle } from './Bottle.svg';
