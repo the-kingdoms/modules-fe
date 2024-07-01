@@ -1,8 +1,8 @@
 import * as Commerce from './svg/commerce';
 import * as Control from './svg/control';
+/*import * as Data from './svg/data';
 import * as File from './svg/file';
-/*import * as Formatting from './svg/formatting';
-import * as Data from './svg/data';
+import * as Formatting from './svg/formatting';
 import * as Modifier from './svg/modifier';
 import * as Navigation from './svg/navigation';
 import * as Social from './svg/social';
@@ -16,11 +16,10 @@ import * as User from './svg/user';*/
 export const IconCategory = {
     Commerce: { ...Commerce },
     Control: { ...Control },
-
+    /*Data: { ...Data },
     File: { ...File },
     /*Formatting: { ...Formatting },
     Modifier: { ...Modifier },
-        Data: { ...Data },
     Navigation: { ...Navigation },
     Social: { ...Social },
     Status: { ...Status },
@@ -34,11 +33,10 @@ export const IconCategory = {
 const icons = {
     ...Commerce,
     ...Control,
-
+    /*...Data,
     ...File,
     /*...Formatting,
     ...Modifier,
-        ...Data,
     ...Navigation,
     ...Social,
     ...Status,
