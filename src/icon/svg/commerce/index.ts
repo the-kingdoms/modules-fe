@@ -1,5 +1,5 @@
-export { default as Account } from './Account.svg';
-export { default as Bell_Table } from './Bell-Table.svg';
+export { default as account } from './account.svg';
+/*export { default as Bell_Table } from './Bell-Table.svg';
 export { default as Bottle_Multiple } from './Bottle-Multiple.svg';
 export { default as Bottle } from './Bottle.svg';
 export { default as Building_Bank } from './Building-Bank.svg';
@@ -23,3 +23,4 @@ export { default as Transportation_Truck_Delivery } from './Transportation-Truck
 export { default as Transportation_Truck } from './Transportation-Truck.svg';
 export { default as Wallet } from './Wallet.svg';
 export { default as Water_Cup } from './Water-Cup.svg';
+*/
