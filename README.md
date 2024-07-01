@@ -20,3 +20,16 @@ StorybookNpm - storybook과 npm 배포가 이루어지는 브랜치
 - s3를 통한 storybook 배포는 pull-request가 닫혔을 때 작동 : s3.yml
 - pull-request 검증 기능 : test.yml
 - Npm package 배포는 version이 변경될 때 작동 : npm.yml
+
+# 부모 프로젝트에서 우리팀 디자인을 사용하는 방법
+1. yarn add lodash (tailwind.config파일 merge를 위한 라이브러리 설치)
+2. 아래 예시와 같은 코드를 부모 프로젝트의 tailwind.config 파일에 입력
+   
+```
+import { merge } from "lodash";
+import tailwindCustomConfig from "./tailwind_custom.config";
+
+const config: Config = merge(baseConfig, tailwindCustomConfig);
+
+export default config;
+```
