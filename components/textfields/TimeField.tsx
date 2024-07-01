@@ -1,10 +1,11 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import FlexBox from "../../layout/FlexBox";
 
 interface TextFieldProps {
   value: string;
   setValue: React.Dispatch<React.SetStateAction<string>>;
   className?: string;
+  setIsFocused?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 /**
@@ -19,6 +20,7 @@ export default function TimeField({
   value,
   setValue,
   className,
+  setIsFocused,
   ...props
 }: TextFieldProps & JSX.IntrinsicElements["input"]) {
   const [focus, setFocus] = useState<boolean>(false);
@@ -56,6 +58,11 @@ export default function TimeField({
       inputRefList[index + 1].current?.focus();
     }
   };
+
+  useEffect(() => {
+    focus && setIsFocused !== undefined && setIsFocused(true);
+    !focus && setIsFocused !== undefined && setIsFocused(false);
+  }, [focus]);
 
   return (
     <FlexBox
