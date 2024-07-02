@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 import { merge } from "lodash";
 import tailwindCustomConfig from "./tailwind_custom.config";
+import tailwindElevationConfig from "./tailwind_elevation.config";
 
 const baseConfig: Config = {
   content: [
@@ -18,6 +19,10 @@ const baseConfig: Config = {
   },
   plugins: [],
 };
-const config: Config = merge(baseConfig, tailwindCustomConfig);
+const config: Config = merge(
+  baseConfig,
+  tailwindCustomConfig,
+  tailwindElevationConfig
+);
 
 export default config;
