@@ -1,6 +1,6 @@
 import { TestButtonProps, buttonStyle } from "./Button";
 
-export const getColorInfo = (args: TestButtonProps, styles: any) => {
+export const getStateInfo = (args: TestButtonProps, styles: any) => {
   const type = args.type || "primary";
   let state = "default";
 
@@ -15,7 +15,7 @@ export const getColorInfo = (args: TestButtonProps, styles: any) => {
   return styles[type][state] || styles[type].default || "";
 };
 
-export const renderInfo = (args: TestButtonProps, color: string) => {
+export const getPropsInfo = (args: TestButtonProps, color: string) => {
   let variant = args.variant || "default";
   let type = args.type || "primary";
 
