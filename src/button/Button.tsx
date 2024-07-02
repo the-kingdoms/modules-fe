@@ -1,46 +1,71 @@
 import React from "react";
 
-interface TestButtonProps {
+export interface TestButtonProps {
   size: "L" | "M" | "S" | "full";
   className?: string;
   text: string;
-  type?: "filled" | "outline" | "border" | "danger" | "disabled";
+  type?: "primary" | "secondary" | "border" | "ghost";
+  variant?: "default" | "danger" | "elevated";
   isClicked?: boolean;
   inactive?: boolean;
   onClick?: () => void;
 }
 
-const sizeStyle = {
+export const sizeStyle = {
   full: "w-full",
-  L: "w-[328px]",
-  M: "w-[160px]",
-  S: "w-[120px]",
+  L: "max-w-[128px] h-[48px] rounded-radius-04",
+  M: "max-w-[128px] h-[40px] rounded-radius-04",
+  S: "max-w-[128px] h-[32px] rounded-radius-03",
 };
 
-export const buttonStyle = {
-  filled: {
+export interface ButtonStyles {
+  [key: string]: {
+    default: string;
+    hover: string;
+    focus: string;
+    active: string;
+    disabled: string;
+    danger: string;
+    elevated: string;
+  };
+}
+
+export const buttonStyle: ButtonStyles = {
+  primary: {
+    default: "bg-Black",
     hover: "bg-Hover-Black",
-    active: "bg-Gray-100",
-    inactive: "bg-Black",
-    clicked: "bg-Black text-Gray-40",
+    focus: "bg-Gray-100",
+    active: "bg-Black",
+    disabled: "bg-Gray-30",
+    danger: "bg-Red-60",
+    elevated: "bg-Black shadow-md",
   },
-  outline: {
-    active: "bg-white border-2 border-Black text-Black",
-    inactive: "bg-white border-2 border-Gray-30 text-Gray-40",
-    clicked: "bg-Gray-30 border-2 border-Gray-40 text-Gray-40",
+  secondary: {
+    default: "bg-Gray-70",
+    hover: "bg-Hover-Gray-70",
+    focus: "bg-Gray-50",
+    active: "bg-Gray-70",
+    disabled: "bg-Gray-30",
+    danger: "bg-Red-60",
+    elevated: "bg-Black shadow-md",
   },
   border: {
     default: "bg-Gray-20",
     hover: "bg-Hover-Gray-20",
+    focus: "bg-Black",
+    active: "bg-Gray-70",
+    disabled: "bg-Gray-30 text-Gray-50",
+    danger: "bg-Red-60",
+    elevated: "bg-Black shadow-md",
+  },
+  ghost: {
+    default: "bg-Black",
+    hover: "bg-Black",
+    focus: "bg-Black",
     active: "bg-Black",
-  },
-  danger: {
-    default: "bg-Red-60",
-    hover: "bg-Hover-Red-60",
-    active: "bg-Red-80",
-  },
-  disabled: {
-    default: "bg-Gray-30",
+    disabled: "bg-Gray-30",
+    danger: "bg-Red-60",
+    elevated: "bg-Black shadow-md",
   },
 };
 
@@ -48,7 +73,8 @@ export default function TestButton({
   size,
   className,
   text,
-  type = "filled",
+  type = "primary",
+  variant = "default",
   isClicked,
   inactive,
   onClick,
@@ -58,22 +84,18 @@ export default function TestButton({
     onClick && onClick();
   };
 
-  const stateClass =
-    type === "filled" || type === "outline"
-      ? buttonStyle[type][
-          inactive ? "inactive" : isClicked ? "clicked" : "active"
-        ]
-      : buttonStyle[type].default;
-
+  const stateClass = inactive
+    ? buttonStyle[type]["disabled"]
+    : isClicked
+    ? buttonStyle[type]["focus"]
+    : buttonStyle[type][variant] || buttonStyle[type]["default"];
   return (
     <button
       type="button"
-      className={`flex justify-center items-center rounded-lg h-[48px] ${
-        sizeStyle[size]
-      } ${stateClass} ${className}`}
+      className={`flex justify-center items-center rounded-lg px-4 ${sizeStyle[size]} ${stateClass} ${className} hover:${buttonStyle[type]["hover"]}`}
       onClick={clickHandle}
     >
-      <div className="B4-medium">{text}</div>
+      <div className="text-s text-white">{text}</div>
     </button>
   );
 }

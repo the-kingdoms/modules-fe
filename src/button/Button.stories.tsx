@@ -1,5 +1,6 @@
-import { Meta, StoryFn } from "@storybook/react/*";
+import { Meta, StoryFn } from "@storybook/react";
 import TestButton, { buttonStyle } from "./Button";
+import { getColorInfo, renderInfo } from "./getColorInfo";
 
 export default {
   title: "Components/Button",
@@ -8,57 +9,44 @@ export default {
     layout: "centered",
     backgrounds: { default: "light" },
   },
-  tags: ["autodocs"],
-};
+  argTypes: {
+    type: {
+      control: {
+        type: "select",
+        options: ["primary", "secondary", "border", "ghost"],
+      },
+    },
+    size: {
+      control: {
+        type: "select",
+        options: ["L", "M", "S", "full"],
+      },
+    },
+    variant: {
+      control: {
+        type: "select",
+        options: ["default", "danger", "elevated"],
+      },
+    },
+  },
+} as Meta<typeof TestButton>;
 
 const Template: StoryFn<typeof TestButton> = (args) => {
-  const getColorInfo = () => {
-    const type = args.type || "filled";
-    const state = args.isClicked
-      ? "clicked"
-      : args.inactive
-        ? "inactive"
-        : "active";
-
-    if (type === "filled" || type === "outline") {
-      return buttonStyle[type][state];
-    } else if (type === "border" || type === "danger") {
-      return buttonStyle[type][
-        args.inactive ? "default" : args.isClicked ? "active" : "hover"
-      ];
-    } else {
-      return buttonStyle[type].default;
-    }
-  };
-
-  const color = getColorInfo();
-  const className = color
-    .split(" ")
-    .map((cls) => `.${cls}`)
-    .join(" ");
+  const color = getColorInfo(args, buttonStyle);
 
   return (
     <>
       <TestButton {...args} />
-      <div style={{ marginTop: "16px" }}>
-        <strong>Token:</strong> {args.type}
-        <br />
-        <strong>State:</strong>{" "}
-        {args.isClicked ? "clicked" : args.inactive ? "inactive" : "active"}
-        <br />
-        <strong>Color:</strong>{" "}
-        {color.includes("bg-") ? color.replace("bg-", "") : "N/A"}
-        <br />
-        <strong>ClassName:</strong> {className}
-      </div>
+      {renderInfo(args, color)}
     </>
   );
 };
 export const CustomButton = Template.bind({});
 CustomButton.args = {
-  size: "M",
-  text: "Custom Button",
-  type: "filled",
+  size: "L",
+  text: "Button",
+  type: "primary",
+  variant: "default",
   isClicked: false,
   inactive: false,
   className: "",
