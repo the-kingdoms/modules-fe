@@ -1,6 +1,6 @@
 import { Meta, StoryFn } from "@storybook/react";
 import TestButton, { buttonStyle } from "./Button";
-import { getColorInfo, renderInfo } from "./getColorInfo";
+import { getStateInfo, getPropsInfo } from "./getPropsInfo";
 
 export default {
   title: "Components/Button",
@@ -32,12 +32,12 @@ export default {
 } as Meta<typeof TestButton>;
 
 const Template: StoryFn<typeof TestButton> = (args) => {
-  const color = getColorInfo(args, buttonStyle);
+  const color = getStateInfo(args, buttonStyle);
 
   return (
     <>
       <TestButton {...args} />
-      {renderInfo(args, color)}
+      {getPropsInfo(args, color)}
     </>
   );
 };
