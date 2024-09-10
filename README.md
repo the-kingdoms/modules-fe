@@ -2,6 +2,14 @@
 
 storybook을 통한 컴포넌트 개발 프로젝트
 
+## 시작방법
+
+```bash
+yarn add @eolluga/eolluga-ui
+or
+npm install @eolluga/eolluga-ui
+```
+
 ## develop
 
 ```bash
