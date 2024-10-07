@@ -4,8 +4,8 @@ import Icon from "src/icon/Icon";
 export interface DialogProps {
   open: boolean;
   title: string;
-  leftText: string;
-  rightText: string;
+  leftText?: string;
+  rightText?: string;
   dismissible?: boolean;
   description?: string;
   label?: string;
@@ -51,11 +51,13 @@ export default function Dialog({
           )}
         </div>
         {description && (
-          <div className="pb-spacing-06 body-02-regular text-text-primary">
+          <div className="body-02-regular text-text-primary">
             {description}
           </div>
         )}
-        <div className="flex flex-row gap-spacing-02 w-full">
+        {(leftText || rightText) && (
+        <div className="flex flex-row gap-spacing-02 w-full mt-spacing-06">
+          {leftText && (
           <ButtonMobile
             size={"M"}
             style={"secondary"}
@@ -63,7 +65,8 @@ export default function Dialog({
             state={"enabled"}
             text1={leftText}
             onClick={leftOnClick}
-          />
+          />)}
+          {rightText && (
           <ButtonMobile
             size={"M"}
             style={"primary"}
@@ -71,8 +74,8 @@ export default function Dialog({
             state={"enabled"}
             text1={rightText}
             onClick={rightOnClick}
-          />
-        </div>
+          />)}
+        </div>)}
       </div>
     )
   );

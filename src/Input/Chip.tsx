@@ -5,7 +5,7 @@ import { InputStateType } from "src/Input/type";
 
 export interface ChipProps {
   size: "L" | "M" | "S";
-  state: Omit<InputStateType, "warning" | "error" | "readOnly">;
+  state: "enable" | "disabled"; // Omit<InputStateType, "warning" | "error" | "readOnly">; 반영 안되는 부분 수정 필요
   dismissible: boolean;
   label: string;
   color:
