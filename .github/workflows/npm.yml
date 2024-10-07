@@ -3,7 +3,7 @@ name: Npm Publish
 on:
   push:
     branches:
-      - WSBranch
+      - FixModules
     tags:
       - "v[0-9]+.[0-9]+.[0-9]+"
 

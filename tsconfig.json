@@ -4,13 +4,14 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "outDir": "dist",
     "declaration": true,
-    "declarationDir": "dist/types",
+    "declarationDir": "dist",
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "baseUrl": ".",
+    "noEmit": false,
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -25,5 +26,5 @@
     ]
   },
   "include": ["custom.d.ts", "src"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules","dist"]
 }
