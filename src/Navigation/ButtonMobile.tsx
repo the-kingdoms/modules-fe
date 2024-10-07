@@ -7,7 +7,7 @@ export interface ButtonPropsMobile {
   style:
     | "primary"
     | "secondary"
-    | "border"
+    | "border" 
     | "ghost"
     | "danger_primary"
     | "danger_border"
@@ -20,6 +20,7 @@ export interface ButtonPropsMobile {
   text2?: string;
   iconKey?: iconKey;
   onClick?: () => void;
+  className?: string; // 임시 방편 수정
 }
 
 export const buttonSize = {
@@ -209,6 +210,7 @@ export default function ButtonMobile({
   text2 = "Text2",
   iconKey,
   onClick,
+  className, // 임시 방편 수정
 }: ButtonPropsMobile) {
   const [isPressed, setIsPressed] = useState(false);
 
@@ -239,7 +241,8 @@ export default function ButtonMobile({
   const dividerColor = dividerColors[style][isPressed ? "active" : state];
   const iconColor = buttonIconColors[style][isPressed ? "active" : state];
 
-  return (
+  return ( // className 임시 방편 수정
+    <div className={className}>
     <button
       className={`flex ${labelClass} ${sizeClass} ${styleClass} ${roundClass}`}
       onMouseDown={handleMouseDown}
@@ -280,5 +283,6 @@ export default function ButtonMobile({
         </span>
       )}
     </button>
+    </div>
   );
 }
