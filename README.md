@@ -11,7 +11,7 @@ yarn add @eolluga/eolluga-ui
 
 https://www.npmjs.com/package/@eolluga/eolluga-ui
 
-## develop
+# develop
 
 ```bash
 - next.js 프레임워크 위에서 돌아가는 컴포넌트 개발
